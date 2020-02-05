@@ -1,0 +1,23 @@
+version: 2.1
+
+workflows:
+  version: 2.1
+  install-airflow-chart:
+    jobs:
+      - test
+
+jobs:
+
+  test:
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - run:
+          name: Test installation
+          command: |
+            set -xe
+            pyenv global 3.7.0
+            python3 -m virtualenv /tmp/venv-circle-ci
+            source /tmp/venv-circle-ci/bin/activate
+            pip install --user astronomer_e2e_test
+            which astronomer-ci
