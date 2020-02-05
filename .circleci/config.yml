@@ -16,7 +16,9 @@ jobs:
           name: Test installation
           command: |
             set -xe
+            which gcloud
             pyenv global 3.7.0
             pip install astronomer_e2e_test
             pip freeze
             which astronomer-ci
+            which gcloud
