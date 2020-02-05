@@ -17,7 +17,6 @@ jobs:
           command: |
             set -xe
             pyenv global 3.7.0
-            python3 -m virtualenv /tmp/venv-circle-ci
-            source /tmp/venv-circle-ci/bin/activate
-            pip install astronomer_e2e_test
+            pip install --user astronomer_e2e_test
+            pip freeze
             which astronomer-ci
