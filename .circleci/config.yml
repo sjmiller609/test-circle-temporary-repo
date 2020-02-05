@@ -17,7 +17,6 @@ jobs:
           command: |
             set -xe
             which gcloud
-            gcloud help
             pyenv global 3.7.0
             pip install astronomer_e2e_test
             pip freeze
