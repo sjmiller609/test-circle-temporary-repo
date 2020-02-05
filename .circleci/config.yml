@@ -22,4 +22,5 @@ jobs:
             pip freeze
             which astronomer-ci
             which gcloud
+            pyenv global 2.7.12
             gcloud help
